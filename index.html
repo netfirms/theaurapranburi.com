@@ -572,6 +572,7 @@
                 small_feat_persons: "2人", small_feat_bed: "1张大床", small_feat_bath: "独立卫浴", small_feat_tv: "32英寸电视",
                 big_feat_persons: "3-5人 (额外150/人)", big_feat_bed: "2张大床 + 1张单人床", big_feat_bath: "独立卫浴", big_feat_tv: "40英寸电视",
                 btn_trip: "在Trip.com预订", btn_booking: "在Booking.com预订", btn_line_inquiry: "LINE 咨询",
+                btn_book: "立即预订", btn_view_rooms: "查看客房",
                 amenities_subtitle: "配套设施", amenities_h2: "如家般舒适",
                 amenity_wifi: "免费 WIFI", amenity_wifi_p: "高速互联网全覆盖。",
                 amenity_fridge: "冰箱", amenity_fridge_p: "配备水杯、咖啡杯和烧水壶。",
@@ -608,6 +609,7 @@
                 small_feat_persons: "2 чел.", small_feat_bed: "1 Кровать Queen", small_feat_bath: "Собственная ванная", small_feat_tv: "32\" ТВ",
                 big_feat_persons: "3-5 чел. (+150 за чел.)", big_feat_bed: "2 Queen + 1 Односпальная", big_feat_bath: "Собственная ванная", big_feat_tv: "40\" ТВ",
                 btn_trip: "Бронь на Trip.com", btn_booking: "Бронь на Booking.com", btn_line_inquiry: "Запрос в LINE",
+                btn_book: "Забронировать", btn_view_rooms: "Посмотреть номера",
                 amenities_subtitle: "Удобства", amenities_h2: "Комфортно как дома",
                 amenity_wifi: "Бесплатный WIFI", amenity_wifi_p: "Интернет на всей территории.",
                 amenity_fridge: "Холодильник", amenity_fridge_p: "Стаканы, кружки и чайник.",
@@ -742,8 +744,14 @@
             window.addEventListener("scroll", reveal);
             window.addEventListener("scroll", handleNavbar);
             
-            // Language persistence
-            const savedLang = localStorage.getItem('aura_lang') || 'th';
+            
+            // Language persistence & Auto-detection
+            const getBrowserLang = () => {
+                const navLang = (navigator.language || navigator.userLanguage || 'th').split('-')[0];
+                const supported = { th: 'th', en: 'en', ja: 'jp', ko: 'kr', zh: 'zh', ru: 'ru' };
+                return supported[navLang] || 'th'; // Default to Thai if not recognized
+            };
+            const savedLang = localStorage.getItem('aura_lang') || getBrowserLang();
             switchLanguage(savedLang, false);
 
             // Initial checks
