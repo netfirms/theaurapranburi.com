@@ -52,6 +52,15 @@
         </div>
     </nav>
 
+    <!-- Lightbox Wrapper -->
+    <div id="lightbox" onclick="closeLightbox()">
+        <div class="lightbox-close">&times;</div>
+        <div class="lightbox-content" onclick="event.stopPropagation()">
+            <img src="" alt="Lightbox Image" id="lightbox-img">
+            <div class="lightbox-caption" id="lightbox-caption"></div>
+        </div>
+    </div>
+
     <!-- Hero Section -->
     <section id="hero">
         <div class="hero-bg" style="background-image: url('assets/landscape_garden/IMG_1526.webp');"></div>
@@ -226,83 +235,146 @@
             <h2 data-i18n="gallery_h2">มุมพักผ่อนที่ ดิ ออร่า</h2>
         </div>
         <div class="container gallery-grid">
-            <div class="gallery-item reveal"><img src="assets/landscape_garden/IMG_3121.webp" alt="The Aura Overview"></div>
-            <div class="gallery-item reveal"><img src="assets/landscape_garden/IMG_1526.webp" alt="Garden Path"></div>
-            <div class="gallery-item reveal"><img src="assets/landscape_garden/IMG_3530.webp" alt="Fountain & Arch"></div>
-            <div class="gallery-item reveal"><img src="assets/landscape_garden/IMG_3120.webp" alt="Garden Entrance"></div>
-            <div class="gallery-item reveal"><img src="assets/big_house/IMG_6406.webp" alt="Big House Exterior"></div>
-            <div class="gallery-item reveal"><img src="assets/big_house/IMG_0776.webp" alt="Big House Living Room"></div>
-            <div class="gallery-item reveal"><img src="assets/big_house/IMG_0779.webp" alt="Big House Bedrooms"></div>
-            <div class="gallery-item reveal"><img src="assets/big_house/IMG_1762.webp" alt="Big House Bathroom"></div>
-            <div class="gallery-item reveal"><img src="assets/small_house/IMG_4408.webp" alt="Small House Exterior"></div>
-            <div class="gallery-item reveal"><img src="assets/small_house/IMG_1537.webp" alt="Small House Interior"></div>
-            <div class="gallery-item reveal"><img src="assets/small_house/IMG_1543.webp" alt="Small House View"></div>
-            <div class="gallery-item reveal"><img src="assets/landscape_garden/491574363_122165580794323189_4348334226164272148_n.webp" alt="A-frame Night View"></div>
+            <div class="gallery-item reveal" onclick="openLightbox('assets/landscape_garden/IMG_1525.webp', 'Garden Passage')">
+                <img src="assets/landscape_garden/IMG_1525.webp" alt="Garden Path">
+            </div>
+            <div class="gallery-item reveal" onclick="openLightbox('assets/landscape_garden/IMG_1526.webp', 'Lush Greenery')">
+                <img src="assets/landscape_garden/IMG_1526.webp" alt="Garden View">
+            </div>
+            <div class="gallery-item reveal" onclick="openLightbox('assets/landscape_garden/IMG_3120.webp', 'Homestay Atmosphere')">
+                <img src="assets/landscape_garden/IMG_3120.webp" alt="Resort Side">
+            </div>
+            <div class="gallery-item reveal" onclick="openLightbox('assets/landscape_garden/IMG_3121.webp', 'Evening Aura')">
+                <img src="assets/landscape_garden/IMG_3121.webp" alt="Resort Night">
+            </div>
+            <div class="gallery-item reveal" onclick="openLightbox('assets/landscape_garden/IMG_3123.webp', 'Private Veranda')">
+                <img src="assets/landscape_garden/IMG_3123.webp" alt="Wood Cabin">
+            </div>
+            <div class="gallery-item reveal" onclick="openLightbox('assets/landscape_garden/IMG_3125.webp', 'Tropical Garden')">
+                <img src="assets/landscape_garden/IMG_3125.webp" alt="Tropical Path">
+            </div>
+            <div class="gallery-item reveal" onclick="openLightbox('assets/landscape_garden/IMG_3288.webp', 'Outdoor Seating')">
+                <img src="assets/landscape_garden/IMG_3288.webp" alt="Lounge Area">
+            </div>
+            <div class="gallery-item reveal" onclick="openLightbox('assets/landscape_garden/IMG_3519.webp', 'Garden Sculptures')">
+                <img src="assets/landscape_garden/IMG_3519.webp" alt="Garden Art">
+            </div>
+            <div class="gallery-item reveal" onclick="openLightbox('assets/landscape_garden/IMG_3523.webp', 'Peaceful Corner')">
+                <img src="assets/landscape_garden/IMG_3523.webp" alt="Quiet Spot">
+            </div>
+            <div class="gallery-item reveal" onclick="openLightbox('assets/landscape_garden/IMG_3524.webp', 'Morning Light')">
+                <img src="assets/landscape_garden/IMG_3524.webp" alt="Bright Garden">
+            </div>
+            <div class="gallery-item reveal" onclick="openLightbox('assets/landscape_garden/IMG_3528.webp', 'Pet Friendly Spaces')">
+                <img src="assets/landscape_garden/IMG_3528.webp" alt="Green Lawn">
+            </div>
+            <div class="gallery-item reveal" onclick="openLightbox('assets/landscape_garden/IMG_3530.webp', 'The Aura Entrance')">
+                <img src="assets/landscape_garden/IMG_3530.webp" alt="Main Entrance">
+            </div>
         </div>
     </section>
 
+    <!-- Nearby Attractions -->
     <section id="attractions" class="section-padding">
         <div class="container text-center section-header">
             <span class="subtitle" data-i18n="loc_subtitle">การเดินทาง / Location</span>
-            <h2 data-i18n="loc_h2">แหล่งท่องเที่ยวใกล้เคียง</h2>
+            <h2 data-i18n="loc_h2">แหล่งท่องเที่ยวใกล้เคียง / Attractions</h2>
         </div>
         <div class="container attractions-grid">
             <div class="attraction-item reveal">
-                <div class="time" data-i18n="attr_reser_time">3 min</div>
-                <h4 data-i18n="attr_reser_h4">Racer Marina</h4>
-                <p data-i18n="attr_reser_dist">1.5 km</p>
+                <div class="attraction-info">
+                    <div class="time" data-i18n="attr_reser_time">3 min</div>
+                    <h4 data-i18n="attr_reser_h4">ท่าเรือเรซเซอร์ Marina</h4>
+                    <p data-i18n="attr_reser_dist">1.5 กม.</p>
+                </div>
             </div>
             <div class="attraction-item reveal">
-                <div class="time" data-i18n="attr_shrine_time">3 min</div>
-                <h4 data-i18n="attr_shrine_h4">Chao Mae Tubtim Thong</h4>
-                <p data-i18n="attr_shrine_dist">1.0 km</p>
+                <div class="attraction-info">
+                    <div class="time" data-i18n="attr_shrine_time">3 min</div>
+                    <h4 data-i18n="attr_shrine_h4">ศาลเจ้าแม่ทัพทิมทอง</h4>
+                    <p data-i18n="attr_shrine_dist">1 กม.</p>
+                </div>
             </div>
             <div class="attraction-item reveal">
-                <div class="time" data-i18n="attr_forest_time">15 min</div>
-                <h4 data-i18n="attr_forest_h4">Pranburi Forest Park</h4>
-                <p data-i18n="attr_forest_dist">11 km</p>
+                <div class="attraction-info">
+                    <div class="time" data-i18n="attr_forest_time">15 min</div>
+                    <h4 data-i18n="attr_forest_h4">วนอุทยานปราณบุรี</h4>
+                    <p data-i18n="attr_forest_dist">11 กม.</p>
+                </div>
             </div>
             <div class="attraction-item reveal">
-                <div class="time" data-i18n="attr_learning_time">14 min</div>
-                <h4 data-i18n="attr_learning_h4">Mangrove Learning Center</h4>
-                <p data-i18n="attr_learning_dist">9.2 km</p>
+                <div class="attraction-info">
+                    <div class="time" data-i18n="attr_learning_time">14 min</div>
+                    <h4 data-i18n="attr_learning_h4">ศูนย์การเรียนรู้ระบบนิเวศฯ</h4>
+                    <p data-i18n="attr_learning_dist">9.2 กม.</p>
+                </div>
             </div>
             <div class="attraction-item reveal">
-                <div class="time" data-i18n="attr_skull_time">13 min</div>
-                <h4 data-i18n="attr_skull_h4">Khao Kalok Beach</h4>
-                <p data-i18n="attr_skull_dist">11 km</p>
+                <div class="attraction-info">
+                    <div class="time" data-i18n="attr_skull_time">13 min</div>
+                    <h4 data-i18n="attr_skull_h4">หาดเขากะโหลก</h4>
+                    <p data-i18n="attr_skull_dist">11 กม.</p>
+                </div>
             </div>
             <div class="attraction-item reveal">
-                <div class="time" data-i18n="attr_street_time">9 min</div>
-                <h4 data-i18n="attr_street_h4">Pak Nam Pran Street Food</h4>
-                <p data-i18n="attr_street_dist">5.6 km</p>
+                <div class="attraction-info">
+                    <div class="time" data-i18n="attr_street_time">9 min</div>
+                    <h4 data-i18n="attr_street_h4">สตรีทฟู๊ด ปากน้ำปราณ</h4>
+                    <p data-i18n="attr_street_dist">5.6 กม.</p>
+                </div>
             </div>
             <div class="attraction-item reveal">
-                <div class="time" data-i18n="attr_wat_time">35 min</div>
-                <h4 data-i18n="attr_wat_h4">Wat Huay Mongkol</h4>
-                <p data-i18n="attr_wat_dist">35.3 km</p>
+                <div class="attraction-info">
+                    <div class="time" data-i18n="attr_wat_time">35 min</div>
+                    <h4 data-i18n="attr_wat_h4">วัดห้วยมงคล</h4>
+                    <p data-i18n="attr_wat_dist">35.3 กม.</p>
+                </div>
             </div>
             <div class="attraction-item reveal">
-                <div class="time" data-i18n="attr_huahin_time">23 min</div>
-                <h4 data-i18n="attr_huahin_h4">Hua Hin Beach</h4>
-                <p data-i18n="attr_huahin_dist">21.2 km</p>
+                <div class="attraction-info">
+                    <div class="time" data-i18n="attr_huahin_time">23 min</div>
+                    <h4 data-i18n="attr_huahin_h4">หาดหัวหิน</h4>
+                    <p data-i18n="attr_huahin_dist">21.2 กม.</p>
+                </div>
             </div>
             <div class="attraction-item reveal">
-                <div class="time" data-i18n="attr_turtle_time">14 min</div>
-                <h4 data-i18n="attr_turtle_h4">Khao Tao Beach</h4>
-                <p data-i18n="attr_turtle_dist">9.2 km</p>
+                <div class="attraction-info">
+                    <div class="time" data-i18n="attr_turtle_time">14 min</div>
+                    <h4 data-i18n="attr_turtle_h4">หาดเขาเต่า</h4>
+                    <p data-i18n="attr_turtle_dist">9.2 กม.</p>
+                </div>
             </div>
             <div class="attraction-item reveal">
-                <div class="time" data-i18n="attr_teacher_time">10 min</div>
-                <h4 data-i18n="attr_teacher_h4">Baan Kru Suan Restaurant</h4>
-                <p data-i18n="attr_teacher_dist">7.2 km</p>
+                <div class="attraction-info">
+                    <div class="time" data-i18n="attr_teacher_time">10 min</div>
+                    <h4 data-i18n="attr_teacher_h4">ร้านอาหารบ้านครูส่วน</h4>
+                    <p data-i18n="attr_teacher_dist">7.2 กม.</p>
+                </div>
             </div>
             <div class="attraction-item reveal">
-                <div class="time" data-i18n="attr_memory_time">11 min</div>
-                <h4 data-i18n="attr_memory_h4">Memory House Cafe</h4>
-                <p data-i18n="attr_memory_dist">8.0 km</p>
+                <div class="attraction-info">
+                    <div class="time" data-i18n="attr_memory_time">11 min</div>
+                    <h4 data-i18n="attr_memory_h4">Memory House Cafe</h4>
+                    <p data-i18n="attr_memory_dist">8 กม.</p>
+                </div>
             </div>
-            <div cla        const translations = {
+            <div class="attraction-item reveal">
+                <div class="attraction-info">
+                    <div class="time" data-i18n="attr_bamp_time">14 min</div>
+                    <h4 data-i18n="attr_bamp_h4">Bamp : beach & cafe</h4>
+                    <p data-i18n="attr_bamp_dist">9.7 กม.</p>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <footer class="text-center">
+        <p>&copy; 2026 The Aura Pranburi. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const translations = {
             th: {
                 nav_about: "ข้อมูลที่พัก", nav_houses: "ประเภทบ้าน", nav_amenities: "สิ่งอำนวยความสะดวก", nav_gallery: "บรรยากาศ", nav_book: "จองเลย",
                 hero_h1: "Nature is your <span>Aura</span>", hero_p: "ดิ ออร่า ปราณบุรี โฮมสเตย์ (Pet friendly)<br>พักผ่อนท่ามกลางธรรมชาติ ในบรรยากาศส่วนตัว",
@@ -522,16 +594,6 @@
                 attr_memory_time: "11 min", attr_memory_h4: "Memory House Cafe", attr_memory_dist: "8 км",
                 attr_bamp_time: "14 мин", attr_bamp_h4: "Bamp : beach & cafe", attr_bamp_dist: "9.7 км",
                 contact_subtitle: "Контакты", contact_h2: "Запросы и бронирование", contact_p: "Мы рады всем гостям."
-            }
-        };
-         attr_street_time: "9분", attr_street_h4: "길거리 음식", attr_street_dist: "5.6km",
-                attr_wat_time: "35분", attr_wat_h4: "왓 후아이몽콘", attr_wat_dist: "35.3km",
-                attr_huahin_time: "23분", attr_huahin_h4: "후아힌 해변", attr_huahin_dist: "21.2km",
-                attr_turtle_time: "14분", attr_turtle_h4: "카오 타오 해변", attr_turtle_dist: "9.2km",
-                attr_teacher_time: "10분", attr_teacher_h4: "Baan Kru Suan", attr_teacher_dist: "7.2km",
-                attr_memory_time: "11분", attr_memory_h4: "메모리 하우스 카페", attr_memory_dist: "8km",
-                attr_bamp_time: "14분", attr_bamp_h4: "Bamp : beach & cafe", attr_bamp_dist: "9.7km",
-                contact_subtitle: "연락처", contact_h2: "예약 및 문의", contact_p: "누구나 환영합니다."
             },
             zh: {
                 nav_about: "关于", nav_houses: "客房", nav_amenities: "设施", nav_gallery: "画廊", nav_book: "立即预订",
@@ -624,7 +686,7 @@
                 for (let i = 0; i < reveals.length; i++) {
                     const windowHeight = window.innerHeight;
                     const elementTop = reveals[i].getBoundingClientRect().top;
-                    const elementVisible = 150;
+                    const elementVisible = 20;
                     if (elementTop < windowHeight - elementVisible) {
                         reveals[i].classList.add("active");
                     }
@@ -660,6 +722,13 @@
             if (toggle && navLinks) {
                 toggle.addEventListener('click', () => {
                     navLinks.classList.toggle('active');
+                });
+
+                // Auto-close menu when a link is clicked
+                navLinks.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        navLinks.classList.remove('active');
+                    });
                 });
             }
         });
@@ -713,6 +782,39 @@
                 thumb.classList.add('active');
             }
         }
+
+        /**
+         * Lightbox Logic
+         */
+        function openLightbox(src, caption) {
+            const lightbox = document.getElementById('lightbox');
+            const lbImg = document.getElementById('lightbox-img');
+            const lbCap = document.getElementById('lightbox-caption');
+            
+            if (lightbox && lbImg) {
+                lbImg.src = src;
+                lbCap.innerText = caption || "";
+                lightbox.style.display = 'flex';
+                setTimeout(() => lightbox.classList.add('active'), 10);
+                document.body.style.overflow = 'hidden'; // Lock scroll
+            }
+        }
+
+        function closeLightbox() {
+            const lightbox = document.getElementById('lightbox');
+            if (lightbox) {
+                lightbox.classList.remove('active');
+                setTimeout(() => {
+                    lightbox.style.display = 'none';
+                    document.body.style.overflow = 'auto'; // Unlock scroll
+                }, 300);
+            }
+        }
+
+        // Close on escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeLightbox();
+        });
     </script>
 </body>
 </html>
