@@ -1,0 +1,5 @@
+assets_backup/
+*.py
+.DS_Store
+*.tmp
+*.bak

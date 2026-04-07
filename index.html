@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Aura Pranburi | ดิ ออร่า ปราณบุรี โฮมสเตย์</title>
+    <meta name="description" content="ดิ ออร่า ปราณบุรี โฮมสเตย์ (Pet friendly) - ที่พักส่วนตัว บรรยากาศอบอุ่น ใกล้วนอุทยานปราณบุรีและหาดเขากะโหลก">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anuphan:wght@300;400;600&family=Inter:wght@300;400;600&family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Lucide Icons (CDN) -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav id="main-nav">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <img src="assets/logo/logo.webp" alt="The Aura Pranburi Logo" class="nav-logo">
+                <div class="logo-text">THE AURA<span>PRANBURI</span></div>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#about" data-i18n="nav_about">ข้อมูลที่พัก / About</a></li>
+                <li><a href="#houses" data-i18n="nav_houses">ประเภทบ้าน / Houses</a></li>
+                <li><a href="#amenities" data-i18n="nav_amenities">สิ่งอำนวยความสะดวก / Amenities</a></li>
+                <li><a href="#gallery" data-i18n="nav_gallery">บรรยากาศ / Gallery</a></li>
+                <li><a href="#contact" class="btn-primary" data-i18n="nav_book">จองเลย / Book Now</a></li>
+                <li class="lang-selector">
+                    <div class="lang-btn" id="current-lang">
+                        <span>🇹🇭</span> TH
+                    </div>
+                    <div class="lang-dropdown">
+                        <div class="lang-option active" onclick="switchLanguage('th')"><span>🇹🇭</span> Thai (ไทย)</div>
+                        <div class="lang-option" onclick="switchLanguage('en')"><span>🇺🇸</span> English</div>
+                        <div class="lang-option" onclick="switchLanguage('jp')"><span>🇯🇵</span> Japanese (日本語)</div>
+                        <div class="lang-option" onclick="switchLanguage('kr')"><span>🇰🇷</span> Korean (한국어)</div>
+                        <div class="lang-option" onclick="switchLanguage('zh')"><span>🇨🇳</span> Chinese (中文)</div>
+                        <div class="lang-option" onclick="switchLanguage('ru')"><span>🇷🇺</span> Russian (Русский)</div>
+                    </div>
+                </li>
+            </ul>
+            <button class="mobile-toggle" id="mobile-toggle">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <div class="hero-bg" style="background-image: url('assets/landscape_garden/IMG_1526.webp');"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="reveal" data-i18n="hero_h1">Nature is your <span>Aura</span></h1>
+            <p class="reveal" data-i18n="hero_p">ดิ ออร่า ปราณบุรี โฮมสเตย์ (Pet friendly)<br>พักผ่อนท่ามกลางธรรมชาติ ในบรรยากาศส่วนตัว</p>
+            <div class="hero-btns reveal">
+                <a href="#houses" class="btn-secondary" data-i18n="btn_view_rooms">ดูประเภทห้องพัก</a>
+                <a href="#contact" class="btn-primary" data-i18n="btn_book">ติดต่อจองที่พัก</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section-padding">
+        <div class="container grid-2">
+            <div class="about-text reveal">
+                <span class="subtitle" data-i18n="about_subtitle">ยินดีต้อนรับสู่ ดิ ออร่า / Welcome</span>
+                <h2 data-i18n="about_h2">ที่พักส่วนตัว บรรยากาศอบอุ่น<br>Your Cozy Private Escape</h2>
+                <p data-i18n="about_p">ดิ ออร่า ปราณบุรี เป็นที่พักส่วนตัว ไม่ใช่โรงแรมหรือรีสอร์ท เราเน้นความสงบ เป็นกันเอง และยินดีต้อนรับสัตว์เลี้ยง (Pet Friendly) ตั้งอยู่ใกล้วนอุทยานปราณบุรีและแหล่งท่องเที่ยวสำคัญ เหมาะสำหรับการพักผ่อนอย่างแท้จริง</p>
+                <div class="rules-box">
+                    <h4 data-i18n="policy_title"><i data-lucide="clock"></i> เวลาเข้าพัก / Stay Policy</h4>
+                    <ul>
+                        <li data-i18n="policy_in">เช็คอิน (Check-in): 15.00 น.</li>
+                        <li data-i18n="policy_out">เช็คเอาท์ (Check-out): 12.00 น.</li>
+                        <li data-i18n="policy_pet">สัตว์เลี้ยงเข้าพักได้ (Pet Friendly) *</li>
+                        <li data-i18n="policy_no_smoke">ห้ามสูบบุหรี่ภายในตัวบ้านพัก (No Smoking)</li>
+                        <li data-i18n="policy_note">* หากสัตว์เลี้ยงทำความสะอาดล่าช้าหรือมีความเสียหาย มีค่าบริการตามจริง</li>
+                    </ul>
+                </div>
+                <div class="stats">
+                    <div class="stat-item">
+                        <h3 data-i18n="stat_pet_h3">Pet</h3>
+                        <p data-i18n="stat_pet_p">Friendly</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3 data-i18n="stat_quiet_h3">Quiet</h3>
+                        <p data-i18n="stat_quiet_p">Atmosphere</p>
+                    </div>
+                </div>
+            </div>
+            <div class="about-img reveal">
+                <img src="assets/landscape_garden/IMG_1526.webp" alt="Garden Entrance" class="rounded-img shadow">
+            </div>
+        </div>
+    </section>
+
+    <!-- House Types -->
+    <section id="houses" class="section-padding bg-light">
+        <div class="container section-header text-center">
+            <span class="subtitle" data-i18n="house_subtitle">ประเภทบ้านพัก / Accommodations</span>
+            <h2 data-i18n="house_h2">พักผ่อนในสไตล์ที่คุณเลือก</h2>
+        </div>
+        <div class="container grid-2">
+            <!-- Small House -->
+            <div class="house-card reveal" id="house-small">
+                <div class="house-img">
+                    <img src="assets/small_house/IMG_4408.webp" alt="บ้านหลังเล็ก" id="main-small">
+                    <div class="price-tag" data-i18n="price_small">฿700 / คืน (Night)</div>
+                </div>
+                <div class="room-thumbnails">
+                    <div class="room-thumb active" onclick="updateHouseImage('main-small', 'assets/small_house/IMG_4408.webp', this)">
+                        <img src="assets/small_house/IMG_4408.webp" alt="Small House Exterior">
+                    </div>
+                    <div class="room-thumb" onclick="updateHouseImage('main-small', 'assets/small_house/IMG_1537.webp', this)">
+                        <img src="assets/small_house/IMG_1537.webp" alt="Small House Bedroom">
+                    </div>
+                    <div class="room-thumb" onclick="updateHouseImage('main-small', 'assets/small_house/IMG_1543.webp', this)">
+                        <img src="assets/small_house/IMG_1543.webp" alt="Small House View">
+                    </div>
+                    <div class="room-thumb" onclick="updateHouseImage('main-small', 'assets/small_house/IMG_1538.webp', this)">
+                        <img src="assets/small_house/IMG_1538.webp" alt="Small House TV Area">
+                    </div>
+                    <div class="room-thumb" onclick="updateHouseImage('main-small', 'assets/small_house/IMG_1542.webp', this)">
+                        <img src="assets/small_house/IMG_1542.webp" alt="Small House Bathroom">
+                    </div>
+                </div>
+                <div class="house-info">
+                    <h3 data-i18n="house_small_h3">บ้านหลังเล็ก (Small House)</h3>
+                    <p data-i18n="house_small_p">เหมาะสำหรับพัก 2 ท่าน บรรยากาศอบอุ่น ตกแต่งสไตล์มินิมอล</p>
+                    <ul class="house-features">
+                        <li><i data-lucide="users"></i> <span data-i18n="small_feat_persons">2 ท่าน (Persons)</span></li>
+                        <li><i data-lucide="bed"></i> <span data-i18n="small_feat_bed">เตียง 5 ฟุต 1 เตียง</span></li>
+                        <li><i data-lucide="tv"></i> <span data-i18n="small_feat_tv">TV 32"</span></li>
+                    </ul>
+                    <div class="booking-group">
+                        <a href="https://www.trip.com/w/JKLaUtTYCU2" class="btn-booking btn-trip" target="_blank" data-i18n="btn_trip">Book on Trip.com</a>
+                        <a href="https://www.booking.com/Share-YqGU49" class="btn-booking btn-booking-com" target="_blank" data-i18n="btn_booking">Book on Booking.com</a>
+                    </div>
+                    <a href="https://line.me/ti/p/@theAuraPranburi" class="btn-outline" data-i18n="btn_line_inquiry">สอบถามทาง Line</a>
+                </div>
+            </div>
+
+            <!-- Big House -->
+            <div class="house-card reveal" id="house-big">
+                <div class="house-img">
+                    <img src="assets/big_house/IMG_6406.webp" alt="บ้านหลังใหญ่" id="main-big">
+                    <div class="price-tag" data-i18n="price_big">฿1,500 / คืน (Night)</div>
+                </div>
+                <div class="room-thumbnails">
+                    <div class="room-thumb active" onclick="updateHouseImage('main-big', 'assets/big_house/IMG_6406.webp', this)">
+                        <img src="assets/big_house/IMG_6406.webp" alt="Big House Exterior">
+                    </div>
+                    <div class="room-thumb" onclick="updateHouseImage('main-big', 'assets/big_house/IMG_0776.webp', this)">
+                        <img src="assets/big_house/IMG_0776.webp" alt="Big House Living">
+                    </div>
+                    <div class="room-thumb" onclick="updateHouseImage('main-big', 'assets/big_house/IMG_0779.webp', this)">
+                        <img src="assets/big_house/IMG_0779.webp" alt="Big House Bunk Bed">
+                    </div>
+                    <div class="room-thumb" onclick="updateHouseImage('main-big', 'assets/big_house/IMG_0780.webp', this)">
+                        <img src="assets/big_house/IMG_0780.webp" alt="Big House Bedroom">
+                    </div>
+                    <div class="room-thumb" onclick="updateHouseImage('main-big', 'assets/big_house/IMG_1762.webp', this)">
+                        <img src="assets/big_house/IMG_1762.webp" alt="Big House Bathroom">
+                    </div>
+                </div>
+                <div class="house-info">
+                    <h3 data-i18n="house_big_h3">บ้านหลังใหญ่ (Big House)</h3>
+                    <p data-i18n="house_big_p">เหมาะสำหรับ 3-5 ท่าน พื้นที่กว้างขวาง พร้อมสิ่งอำนวยความสะดวกครบครัน</p>
+                    <ul class="house-features">
+                        <li><i data-lucide="users"></i> <span data-i18n="big_feat_persons">3-5 ท่าน (Extra 150/คน)</span></li>
+                        <li><i data-lucide="bed"></i> <span data-i18n="big_feat_bed">เตียง 5 ฟุต (2) + 3.5 ฟุต (1)</span></li>
+                        <li><i data-lucide="tv"></i> <span data-i18n="big_feat_tv">TV 40"</span></li>
+                    </ul>
+                    <div class="booking-group">
+                        <a href="https://www.trip.com/w/JKLaUtTYCU2" class="btn-booking btn-trip" target="_blank" data-i18n="btn_trip">Book on Trip.com</a>
+                        <a href="https://www.booking.com/Share-YqGU49" class="btn-booking btn-booking-com" target="_blank" data-i18n="btn_booking">Book on Booking.com</a>
+                    </div>
+                    <a href="https://line.me/ti/p/@theAuraPranburi" class="btn-outline" data-i18n="btn_line_inquiry">สอบถามทาง Line</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Amenities -->
+    <section id="amenities" class="section-padding">
+        <div class="container text-center">
+            <span class="subtitle" data-i18n="amenities_subtitle">สิ่งอำนวยความสะดวก / Amenities</span>
+            <h2 data-i18n="amenities_h2">สะดวกสบายเหมือนอยู่บ้าน</h2>
+        </div>
+        <div class="container amenities-grid">
+            <div class="amenity-item reveal">
+                <i data-lucide="wifi"></i>
+                <h4 data-i18n="amenity_wifi">ฟรี WIFI</h4>
+                <p data-i18n="amenity_wifi_p">อินเทอร์เน็ตความเร็วสูง ครอบคลุมทั่วบริเวณ</p>
+            </div>
+            <div class="amenity-item reveal">
+                <i data-lucide="refrigerator"></i>
+                <h4 data-i18n="amenity_fridge">ตู้เย็น & มินิบาร์</h4>
+                <p data-i18n="amenity_fridge_p">พร้อมแก้วน้ำ แก้วกาแฟ และกาต้มน้ำ</p>
+            </div>
+            <div class="amenity-item reveal">
+                <i data-lucide="coffee"></i>
+                <h4 data-i18n="amenity_coffee">กาแฟ & กาต้มน้ำ</h4>
+                <p data-i18n="amenity_coffee_p">บริการกาแฟสำเร็จรูป พร้อมกาต้มน้ำไฟฟ้า</p>
+            </div>
+            <div class="amenity-item reveal">
+                <i data-lucide="bath"></i>
+                <h4 data-i18n="amenity_bath">เครื่องทำน้ำอุ่น & ผ้าเช็ดตัว</h4>
+                <p data-i18n="amenity_bath_p">เครื่องทำน้ำอุ่น พร้อมผ้าเช็ดตัวสะอาดเตรียมไว้ให้</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="section-padding bg-light">
+        <div class="container text-center section-header">
+            <span class="subtitle" data-i18n="gallery_subtitle">ภาพบรรยากาศ / Gallery</span>
+            <h2 data-i18n="gallery_h2">มุมพักผ่อนที่ ดิ ออร่า</h2>
+        </div>
+        <div class="container gallery-grid">
+            <div class="gallery-item reveal"><img src="assets/landscape_garden/IMG_3121.webp" alt="The Aura Overview"></div>
+            <div class="gallery-item reveal"><img src="assets/landscape_garden/IMG_1526.webp" alt="Garden Path"></div>
+            <div class="gallery-item reveal"><img src="assets/landscape_garden/IMG_3530.webp" alt="Fountain & Arch"></div>
+            <div class="gallery-item reveal"><img src="assets/landscape_garden/IMG_3120.webp" alt="Garden Entrance"></div>
+            <div class="gallery-item reveal"><img src="assets/big_house/IMG_6406.webp" alt="Big House Exterior"></div>
+            <div class="gallery-item reveal"><img src="assets/big_house/IMG_0776.webp" alt="Big House Living Room"></div>
+            <div class="gallery-item reveal"><img src="assets/big_house/IMG_0779.webp" alt="Big House Bedrooms"></div>
+            <div class="gallery-item reveal"><img src="assets/big_house/IMG_1762.webp" alt="Big House Bathroom"></div>
+            <div class="gallery-item reveal"><img src="assets/small_house/IMG_4408.webp" alt="Small House Exterior"></div>
+            <div class="gallery-item reveal"><img src="assets/small_house/IMG_1537.webp" alt="Small House Interior"></div>
+            <div class="gallery-item reveal"><img src="assets/small_house/IMG_1543.webp" alt="Small House View"></div>
+            <div class="gallery-item reveal"><img src="assets/landscape_garden/491574363_122165580794323189_4348334226164272148_n.webp" alt="A-frame Night View"></div>
+        </div>
+    </section>
+
+    <section id="attractions" class="section-padding">
+        <div class="container text-center section-header">
+            <span class="subtitle" data-i18n="loc_subtitle">การเดินทาง / Location</span>
+            <h2 data-i18n="loc_h2">แหล่งท่องเที่ยวใกล้เคียง</h2>
+        </div>
+        <div class="container attractions-grid">
+            <div class="attraction-item reveal">
+                <div class="time" data-i18n="attr_reser_time">3 min</div>
+                <h4 data-i18n="attr_reser_h4">Racer Marina</h4>
+                <p data-i18n="attr_reser_dist">1.5 km</p>
+            </div>
+            <div class="attraction-item reveal">
+                <div class="time" data-i18n="attr_shrine_time">3 min</div>
+                <h4 data-i18n="attr_shrine_h4">Chao Mae Tubtim Thong</h4>
+                <p data-i18n="attr_shrine_dist">1.0 km</p>
+            </div>
+            <div class="attraction-item reveal">
+                <div class="time" data-i18n="attr_forest_time">15 min</div>
+                <h4 data-i18n="attr_forest_h4">Pranburi Forest Park</h4>
+                <p data-i18n="attr_forest_dist">11 km</p>
+            </div>
+            <div class="attraction-item reveal">
+                <div class="time" data-i18n="attr_learning_time">14 min</div>
+                <h4 data-i18n="attr_learning_h4">Mangrove Learning Center</h4>
+                <p data-i18n="attr_learning_dist">9.2 km</p>
+            </div>
+            <div class="attraction-item reveal">
+                <div class="time" data-i18n="attr_skull_time">13 min</div>
+                <h4 data-i18n="attr_skull_h4">Khao Kalok Beach</h4>
+                <p data-i18n="attr_skull_dist">11 km</p>
+            </div>
+            <div class="attraction-item reveal">
+                <div class="time" data-i18n="attr_street_time">9 min</div>
+                <h4 data-i18n="attr_street_h4">Pak Nam Pran Street Food</h4>
+                <p data-i18n="attr_street_dist">5.6 km</p>
+            </div>
+            <div class="attraction-item reveal">
+                <div class="time" data-i18n="attr_wat_time">35 min</div>
+                <h4 data-i18n="attr_wat_h4">Wat Huay Mongkol</h4>
+                <p data-i18n="attr_wat_dist">35.3 km</p>
+            </div>
+            <div class="attraction-item reveal">
+                <div class="time" data-i18n="attr_huahin_time">23 min</div>
+                <h4 data-i18n="attr_huahin_h4">Hua Hin Beach</h4>
+                <p data-i18n="attr_huahin_dist">21.2 km</p>
+            </div>
+            <div class="attraction-item reveal">
+                <div class="time" data-i18n="attr_turtle_time">14 min</div>
+                <h4 data-i18n="attr_turtle_h4">Khao Tao Beach</h4>
+                <p data-i18n="attr_turtle_dist">9.2 km</p>
+            </div>
+            <div class="attraction-item reveal">
+                <div class="time" data-i18n="attr_teacher_time">10 min</div>
+                <h4 data-i18n="attr_teacher_h4">Baan Kru Suan Restaurant</h4>
+                <p data-i18n="attr_teacher_dist">7.2 km</p>
+            </div>
+            <div class="attraction-item reveal">
+                <div class="time" data-i18n="attr_memory_time">11 min</div>
+                <h4 data-i18n="attr_memory_h4">Memory House Cafe</h4>
+                <p data-i18n="attr_memory_dist">8.0 km</p>
+            </div>
+            <div class="attraction-item reveal">
+                <div class="time" data-i18n="attr_bamp_time">14 min</div>
+                <h4 data-i18n="attr_bamp_h4">Bamp : beach & cafe</h4>
+                <p data-i18n="attr_bamp_dist">9.7 km</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Map -->
+    <section id="contact" class="section-padding bg-dark text-white">
+        <div class="container grid-2">
+            <div class="contact-info reveal">
+                <span class="subtitle light" data-i18n="contact_subtitle">ติดต่อเรา</span>
+                <h2 data-i18n="contact_h2">สอบถามและสำรองที่พัก</h2>
+                <p data-i18n="contact_p">ดิ ออร่า ปราณบุรี ยินดีต้อนรับทุกท่านครับ</p>
+                <div class="contact-list">
+                    <a href="tel:0659593526" class="contact-link">
+                        <i data-lucide="phone"></i> 065-959-3526
+                    </a>
+                    <a href="https://line.me/ti/p/@theAuraPranburi" class="contact-link">
+                        <i data-lucide="message-circle"></i> LINE ID : @theAuraPranburi
+                    </a>
+                    <a href="https://www.facebook.com/theAuraPranburi" class="contact-link">
+                        <i data-lucide="message-circle"></i> Facebook Messenger
+                    </a>
+                    <a href="https://www.trip.com/w/JKLaUtTYCU2" class="contact-link" target="_blank">
+                        <i data-lucide="plane"></i> Trip.com
+                    </a>
+                    <a href="https://www.booking.com/Share-YqGU49" class="contact-link" target="_blank">
+                        <i data-lucide="hotel"></i> Booking.com
+                    </a>
+                    <div class="contact-link">
+                        <i data-lucide="map-pin"></i> 168/2 Moo 1, Pak Nam Pran, Pranburi
+                    </div>
+                </div>
+            </div>
+            <div class="contact-map reveal">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3896.5609499523885!2d99.9653194!3d12.412299!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30fdb3a573e9b131%3A0xa50345effc2d9a2d!2z4LiU4Li0IOC4reC4reC4o-C5iOC4siDguJvguKPguLLguJPguJrguLjguKPguLUgLyBUaGUgQXVyYSBQcmFuYnVyaQ!5e0!3m2!1sth!2sth!4v1775534399362!5m2!1sth!2sth" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <footer class="text-center">
+        <p>&copy; 2026 The Aura Pranburi. All rights reserved.</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        const translations = {
+            th: {
+                nav_about: "ข้อมูลที่พัก", nav_houses: "ประเภทบ้าน", nav_amenities: "สิ่งอำนวยความสะดวก", nav_gallery: "บรรยากาศ", nav_book: "จองเลย",
+                hero_h1: "Nature is your <span>Aura</span>", hero_p: "ดิ ออร่า ปราณบุรี โฮมสเตย์ (Pet friendly)<br>พักผ่อนท่ามกลางธรรมชาติ ในบรรยากาศส่วนตัว",
+                btn_view_rooms: "ดูประเภทห้องพัก", btn_book: "ติดต่อจองที่พัก",
+                about_subtitle: "ยินดีต้อนรับสู่ ดิ ออร่า", about_h2: "ที่พักส่วนตัว บรรยากาศอบอุ่น",
+                about_p: "ดิ ออร่า ปราณบุรี เป็นที่พักส่วนตัว ไม่ใช่โรงแรมหรือรีสอร์ท เราเน้นความสงบ เป็นกันเอง และยินดีต้อนรับสัตว์เลี้ยง (Pet Friendly) ตั้งอยู่ใกล้วนอุทยานปราณบุรีและแหล่งท่องเที่ยวสำคัญ",
+                policy_title: "เวลาเข้าพัก / กฎระเบียบ", policy_in: "เช็คอิน: 15.00 น.", policy_out: "เช็คเอาท์: 12.00 น.",
+                policy_pet: "สัตว์เลี้ยงเข้าพักได้ *", policy_no_smoke: "ห้ามสูบบุหรี่ภายในตัวบ้านพัก", policy_note: "* หากสัตว์เลี้ยงทำความเสียหาย มีค่าบริการตามจริง",
+                stat_pet_h3: "Pet", stat_pet_p: "Friendly", stat_quiet_h3: "Quiet", stat_quiet_p: "Atmosphere",
+                house_subtitle: "ประเภทบ้านพัก", house_h2: "พักผ่อนในสไตล์ที่คุณเลือก",
+                price_small: "฿700 / คืน", price_big: "฿1,500 / คืน",
+                house_small_h3: "บ้านหลังเล็ก (Small House)", house_small_p: "เหมาะสำหรับพัก 2 ท่าน บรรยากาศอบอุ่น ตกแต่งสไตล์มินิมอล",
+                house_big_h3: "บ้านหลังใหญ่ (Big House)", house_big_p: "เหมาะสำหรับ 3-5 ท่าน พื้นที่กว้างขวาง พร้อมสิ่งอำนวยความสะดวกครบครัน",
+                small_feat_persons: "2 ท่าน", small_feat_bed: "เตียง 5 ฟุต 1 เตียง", small_feat_tv: "TV 32\"",
+                big_feat_persons: "3-5 ท่าน (เสริมคนละ 150)", big_feat_bed: "เตียง 5 ฟุต (2) + 3.5 ฟุต (1)", big_feat_tv: "TV 40\"",
+                btn_trip: "จองผ่าน Trip.com", btn_booking: "จองผ่าน Booking.com", btn_line_inquiry: "สอบถามทาง Line",
+                amenities_subtitle: "สิ่งอำนวยความสะดวก", amenities_h2: "สะดวกสบายเหมือนอยู่บ้าน",
+                amenity_wifi: "ฟรี WIFI", amenity_wifi_p: "อินเทอร์เน็ตความเร็วสูง ครอบคลุมทั่วบริเวณ",
+                amenity_fridge: "ตู้เย็น & มินิบาร์", amenity_fridge_p: "พร้อมแก้วน้ำ แก้วกาแฟ และกาต้มน้ำ",
+                amenity_coffee: "กาแฟ & กาต้มน้ำ", amenity_coffee_p: "บริการกาแฟสำเร็จรูป พร้อมกาต้มน้ำไฟฟ้า",
+                amenity_bath: "เครื่องทำน้ำอุ่น & ผ้าเช็ดตัว", amenity_bath_p: "เครื่องทำน้ำอุ่น พร้อมผ้าเช็ดตัวสะอาด",
+                gallery_subtitle: "ภาพบรรยากาศ", gallery_h2: "มุมพักผ่อนที่ ดิ ออร่า",
+                loc_subtitle: "การเดินทาง", loc_h2: "แหล่งท่องเที่ยวใกล้เคียง",
+                attr_reser_time: "3 นาที", attr_reser_h4: "ท่าเรือเรซเซอร์ Marina", attr_reser_dist: "1.5 กม.",
+                attr_shrine_time: "3 นาที", attr_shrine_h4: "ศาลเจ้าแม่ทัพทิมทอง", attr_shrine_dist: "1 กม.",
+                attr_forest_time: "15 นาที", attr_forest_h4: "วนอุทยานปราณบุรี", attr_forest_dist: "11 กม.",
+                attr_learning_time: "14 นาที", attr_learning_h4: "ศูนย์การเรียนรู้ระบบนิเวศฯ", attr_learning_dist: "9.2 กม.",
+                attr_skull_time: "13 นาที", attr_skull_h4: "หาดเขากะโหลก", attr_skull_dist: "11 กม.",
+                attr_street_time: "9 นาที", attr_street_h4: "สตรีทฟู๊ด ปากน้ำปราณ", "attr_street_dist": "5.6 กม.",
+                attr_wat_time: "35 นาที", attr_wat_h4: "วัดห้วยมงคล", attr_wat_dist: "35.3 กม.",
+                attr_huahin_time: "23 นาที", attr_huahin_h4: "หาดหัวหิน", attr_huahin_dist: "21.2 กม.",
+                attr_turtle_time: "14 นาที", attr_turtle_h4: "หาดเขาเต่า", attr_turtle_dist: "9.2 กม.",
+                attr_teacher_time: "10 นาที", attr_teacher_h4: "ร้านอาหารบ้านครูส่วน", attr_teacher_dist: "7.2 กม.",
+                attr_memory_time: "11 นาที", attr_memory_h4: "Memory House Cafe", attr_memory_dist: "8 กม.",
+                attr_bamp_time: "14 นาที", attr_bamp_h4: "Bamp : beach & cafe", attr_bamp_dist: "9.7 กม.",
+                contact_subtitle: "ติดต่อเรา", contact_h2: "สอบถามและสำรองที่พัก", contact_p: "ดิ ออร่า ปราณบุรี ยินดีต้อนรับทุกท่านครับ"
+            },
+            en: {
+                nav_about: "About", nav_houses: "Houses", nav_amenities: "Amenities", nav_gallery: "Gallery", nav_book: "Book Now",
+                hero_h1: "Nature is your <span>Aura</span>", hero_p: "The Aura Pranburi Homestay (Pet friendly)<br>Relax amidst nature in a private atmosphere",
+                btn_view_rooms: "View Rooms", btn_book: "Book Your Stay",
+                about_subtitle: "Welcome to The Aura", about_h2: "Your Cozy Private Escape",
+                about_p: "The Aura Pranburi is a private home, not a hotel or resort. We focus on peace, friendliness, and welcome pets (Pet Friendly).",
+                policy_title: "Stay Policy", policy_in: "Check-in: 3:00 PM", policy_out: "Check-out: 12:00 PM",
+                policy_pet: "Pet Friendly *", policy_no_smoke: "No Smoking Inside", policy_note: "* Damage from pets may incur actual costs.",
+                stat_pet_h3: "Pet", stat_pet_p: "Friendly", stat_quiet_h3: "Quiet", stat_quiet_p: "Atmosphere",
+                house_subtitle: "Accommodations", house_h2: "Choose Your Style of Escape",
+                price_small: "฿700 / Night", price_big: "฿1,500 / Night",
+                house_small_h3: "Small House", house_small_p: "Perfect for 2 guests, warm atmosphere with minimalist decor.",
+                house_big_h3: "Big House", house_big_p: "Ideal for 3-5 guests, spacious area with full amenities.",
+                small_feat_persons: "2 Persons", small_feat_bed: "1 Queen Bed (5ft)", small_feat_tv: "32\" TV",
+                big_feat_persons: "3-5 Persons (+150/ea)", big_feat_bed: "2 Queen Beds + 1 Single Bed", big_feat_tv: "40\" TV",
+                btn_trip: "Book on Trip.com", btn_booking: "Book on Booking.com", btn_line_inquiry: "Inquiry via LINE",
+                amenities_subtitle: "Amenities", amenities_h2: "Comfortable Like Home",
+                amenity_wifi: "Free WIFI", amenity_wifi_p: "High-speed internet throughout the area.",
+                amenity_fridge: "Fridge & Minibar", amenity_fridge_p: "Comes with water glasses, mugs, and kettle.",
+                amenity_coffee: "Coffee & Kettle", amenity_coffee_p: "Instant coffee with electric kettle provided.",
+                amenity_bath: "Water Heater & Towels", amenity_bath_p: "Hot shower with fresh towels prepared.",
+                gallery_subtitle: "Gallery", gallery_h2: "Relaxing Moments at The Aura",
+                loc_subtitle: "Location", loc_h2: "Nearby attractions",
+                attr_reser_time: "3 min", attr_reser_h4: "Racer Marina", attr_reser_dist: "1.5 km",
+                attr_shrine_time: "3 min", attr_shrine_h4: "Tubtim Thong Shrine", attr_shrine_dist: "1 km",
+                attr_forest_time: "15 min", attr_forest_h4: "Pranburi Forest Park", attr_forest_dist: "11 km",
+                attr_learning_time: "14 min", attr_learning_h4: "Learning Center", attr_learning_dist: "9.2 km",
+                attr_skull_time: "13 min", attr_skull_h4: "Khao Kalok Beach", attr_skull_dist: "11 km",
+                attr_street_time: "9 min", attr_street_h4: "Pak Nam Pran Street Food", attr_street_dist: "5.6 km",
+                attr_wat_time: "35 min", attr_wat_h4: "Wat Huay Mongkol", attr_wat_dist: "35.3 km",
+                attr_huahin_time: "23 min", attr_huahin_h4: "Hua Hin Beach", attr_huahin_dist: "21.2 km",
+                attr_turtle_time: "14 min", attr_turtle_h4: "Khao Tao Beach", attr_turtle_dist: "9.2 km",
+                attr_teacher_time: "10 min", attr_teacher_h4: "Baan Kru Suan Restaurant", attr_teacher_dist: "7.2 km",
+                attr_memory_time: "11 min", attr_memory_h4: "Memory House Cafe", attr_memory_dist: "8 km",
+                attr_bamp_time: "14 min", attr_bamp_h4: "Bamp : beach & cafe", attr_bamp_dist: "9.7 km",
+                contact_subtitle: "Contact", contact_h2: "Inquiries & Booking", contact_p: "The Aura Pranburi welcomes everyone."
+            },
+            jp: {
+                nav_about: "概要", nav_houses: "部屋タイプ", nav_amenities: "設備", nav_gallery: "ギャラリー", nav_book: "今すぐ予約",
+                hero_h1: "自然があなたの<span>オーラ</span>", hero_p: "ジ・オーラ プランブリー (ペット可)<br>大自然の中でプライベートなひとときを",
+                btn_view_rooms: "客室を見る", btn_book: "予約・お問い合わせ",
+                about_subtitle: "ジ・オーラへようこそ", about_h2: "心地よい隠れ家",
+                about_p: "ジ・オーラ プランブリーはプライベートな別荘です。静寂、フレンドリーな雰囲気、และペット歓迎を大切にしています。",
+                policy_title: "滞在ポリシー", policy_in: "チェックイン: 15:00", policy_out: "チェックアウト: 12:00",
+                policy_pet: "ペット可 *", policy_no_smoke: "室内禁煙", policy_note: "* ペットによる損傷は実費を申し受けます。",
+                stat_pet_h3: "Pet", stat_pet_p: "Friendly", stat_quiet_h3: "Quiet", stat_quiet_p: "Atmosphere",
+                house_subtitle: "宿泊施設", house_h2: "お好みのスタイルでリラックス",
+                price_small: "฿700 / 1泊", price_big: "฿1,500 / 1泊",
+                house_small_h3: "スモールハウス", house_small_p: "2名様に最適。ミニマルな内装の温かみのあるお部屋。",
+                house_big_h3: "ビッグハウス", house_big_p: "3-5名様に最適。広々とした空間と充実した設備。",
+                small_feat_persons: "2名様", small_feat_bed: "クイーンベッド1台", small_feat_tv: "32インチTV",
+                big_feat_persons: "3-5名様 (追加1名150)", big_feat_bed: "クイーン2台 + シングル1台", big_feat_tv: "40インチTV",
+                btn_trip: "Trip.comで予約", btn_booking: "Booking.comで予約", btn_line_inquiry: "LINEでお問い合わせ",
+                amenities_subtitle: "設備・サービス", amenities_h2: "自宅のようなくつろぎ",
+                amenity_wifi: "無料WIFI", amenity_wifi_p: "エリア全域で高速インターネット。",
+                amenity_fridge: "冷蔵庫＆ミニバー", amenity_fridge_p: "コップ、コーヒーカップ、湯沸かし器完備。",
+                amenity_coffee: "コーヒー＆ケトル", amenity_coffee_p: "インスタントコーヒーと電気ケトル。",
+                amenity_bath: "給湯器＆タオル", amenity_bath_p: "温水シャワーと清潔なタオル。",
+                gallery_subtitle: "ギャラリー", gallery_h2: "ジ・オーラでの休息",
+                loc_subtitle: "ロケーション", loc_h2: "近隣の観光スポット",
+                attr_reser_time: "3分", attr_reser_h4: "レーサーマリーナ", attr_reser_dist: "1.5km",
+                attr_shrine_time: "3分", attr_shrine_h4: "タプティムトン神社", attr_shrine_dist: "1km",
+                attr_forest_time: "15分", attr_forest_h4: "プランブリー森林公園", attr_forest_dist: "11km",
+                attr_learning_time: "14分", attr_learning_h4: "学習センター", attr_learning_dist: "9.2km",
+                attr_skull_time: "13分", attr_skull_h4: "カオカロックビーチ", attr_skull_dist: "11km",
+                attr_street_time: "9分", attr_street_h4: "ストリートフード", attr_street_dist: "5.6km",
+                attr_wat_time: "35分", attr_wat_h4: "ワット・フアイモンコン", attr_wat_dist: "35.3km",
+                attr_huahin_time: "23分", attr_huahin_h4: "ホาฮินビーチ", attr_huahin_dist: "21.2km",
+                attr_turtle_time: "14分", attr_turtle_h4: "カอタオビーチ", attr_turtle_dist: "9.2km",
+                attr_teacher_time: "10分", attr_teacher_h4: "Baan Kru Suan", attr_teacher_dist: "7.2km",
+                attr_memory_time: "11分", attr_memory_h4: "メモリーハウスカフェ", attr_memory_dist: "8km",
+                attr_bamp_time: "14分", attr_bamp_h4: "Bamp : beach & cafe", attr_bamp_dist: "9.7km",
+                contact_subtitle: "お問い合わせ", contact_h2: "予約・お問い合わせ", contact_p: "どなたでもお気軽にお問い合わせください。"
+            },
+            kr: {
+                nav_about: "소개", nav_houses: "객실", nav_amenities: "편의시설", nav_gallery: "갤러리", nav_book: "예약하기",
+                hero_h1: "자연이 당신의 <span>아우라</span>입니다", hero_p: "디 아우라 프란부리 (반려동물 가능)<br>프라이빗한 자연 속 휴식",
+                btn_view_rooms: "객실 보기", btn_book: "예약 문의",
+                about_subtitle: "디 아우라에 오신 것을 환영합니다", about_h2: "아늑한 프라이빗 휴식처",
+                about_p: "디 아우라 프란부리는 사유 숙소입니다. 평화로운 분위기와 친절함을 지향하며 반려동물을 환영합니다.",
+                policy_title: "이용 규칙", policy_in: "체크인: 15:00", policy_out: "체크아웃: 12:00",
+                policy_pet: "반려동물 동반 가능 *", policy_no_smoke: "실내 금연", policy_note: "* 반려동물로 인한 손상은 실비 청구됩니다.",
+                stat_pet_h3: "Pet", stat_pet_p: "Friendly", stat_quiet_h3: "Quiet", stat_quiet_p: "Atmosphere",
+                house_subtitle: "숙박 시설", house_h2: "원하시는 스타일을 선택하세요",
+                price_small: "฿700 / 박", price_big: "฿1,500 / 박",
+                house_small_h3: "작은 집", house_small_p: "2인 투숙에 적합하며 미니멀한 인테리어의 따뜻한 분위기입니다.",
+                house_big_h3: "큰 집", house_big_p: "3-5인 투숙에 적합하며 넓은 공간과 편의시설을 갖추고 있습니다.",
+                small_feat_persons: "2인", small_feat_bed: "퀸 침대 1개", small_feat_tv: "32인치 TV",
+                big_feat_persons: "3-5인 (추가 150)", big_feat_bed: "퀸 2개 + 싱글 1개", big_feat_tv: "40인치 TV",
+                btn_trip: "Trip.com 예약", btn_booking: "Booking.com 예약", btn_line_inquiry: "LINE 문의",
+                amenities_subtitle: "편의시설", amenities_h2: "우리 집 같은 편안함",
+                amenity_wifi: "무료 WIFI", amenity_wifi_p: "전 구역 고속 인터넷 가능.",
+                amenity_fridge: "냉장고", amenity_fridge_p: "물컵, 커피잔 및 전기 포트.",
+                amenity_coffee: "커피", amenity_coffee_p: "인스턴트 커피와 전기 포트 제공.",
+                amenity_bath: "온수기", amenity_bath_p: "따뜻한 샤워와 깨끗한 수건.",
+                gallery_subtitle: "갤러리", gallery_h2: "디 아우라에서의 편안한 순간들",
+                loc_subtitle: "위치", loc_h2: "주변 관광 명소",
+                attr_reser_time: "3분", attr_reser_h4: "레이서 마리나", attr_reser_dist: "1.5km",
+                attr_shrine_time: "3분", attr_shrine_h4: "타프티무통 신사", attr_shrine_dist: "1km",
+                attr_forest_time: "15분", attr_forest_h4: "프란부리 삼림공원", attr_forest_dist: "11km",
+                attr_learning_time: "14분", attr_learning_h4: "생태 학습 센터", attr_learning_dist: "9.2km",
+                attr_skull_time: "13분", attr_skull_h4: "카오 칼록 해변", attr_skull_dist: "11km",
+                attr_street_time: "9분", attr_street_h4: "길거리 음식", attr_street_dist: "5.6km",
+                attr_wat_time: "35분", attr_wat_h4: "왓 후아이몽콘", attr_wat_dist: "35.3km",
+                attr_huahin_time: "23분", attr_huahin_h4: "후아힌 해변", attr_huahin_dist: "21.2km",
+                attr_turtle_time: "14분", attr_turtle_h4: "카오 타오 해변", attr_turtle_dist: "9.2km",
+                attr_teacher_time: "10분", attr_teacher_h4: "Baan Kru Suan", attr_teacher_dist: "7.2km",
+                attr_memory_time: "11분", attr_memory_h4: "메모리 하우스 카페", attr_memory_dist: "8km",
+                attr_bamp_time: "14분", attr_bamp_h4: "Bamp : beach & cafe", attr_bamp_dist: "9.7km",
+                contact_subtitle: "연락처", contact_h2: "예약 및 문의", contact_p: "누구나 환영합니다."
+            },
+            zh: {
+                nav_about: "关于", nav_houses: "客房", nav_amenities: "设施", nav_gallery: "画廊", nav_book: "立即预订",
+                hero_h1: "大自然是您的<span>光环</span>", hero_p: "ดิ ออร่า Pranburi (宠物友好)<br>在私人氛围中尽享大自然",
+                about_subtitle: "欢迎来到 ดิ ออร่า", about_h2: "您温馨的私人避风港",
+                about_p: "ดิ ออร่า Pranburi 是私人住宅。我们注重宁静、友好，并欢迎宠物入住。",
+                policy_title: "入住政策", policy_in: "入住: 15:00", policy_out: "退房: 12:00",
+                policy_pet: "宠物友好 *", policy_no_smoke: "室内严格禁烟", policy_note: "* 宠物造成的损坏将按实计费。",
+                stat_pet_h3: "Pet", stat_pet_p: "Friendly", stat_quiet_h3: "Quiet", stat_quiet_p: "Atmosphere",
+                house_subtitle: "住宿选择", house_h2: "选择您心仪的居住风格",
+                price_small: "฿700 / 每晚", price_big: "฿1,500 / 每晚",
+                house_small_h3: "小木屋", house_small_p: "适合2人入住，简约装修，氛围温馨。",
+                house_big_h3: "大木屋", house_big_p: "适合3-5人入住，空间宽敞，设施齐全。",
+                small_feat_persons: "2人", small_feat_bed: "1张大床", small_feat_tv: "32英寸电视",
+                big_feat_persons: "3-5人 (额外150/人)", big_feat_bed: "2张大床 + 1张单人床", big_feat_tv: "40英寸电视",
+                btn_trip: "在Trip.com预订", btn_booking: "在Booking.com预订", btn_line_inquiry: "LINE 咨询",
+                amenities_subtitle: "配套设施", amenities_h2: "如家般舒适",
+                amenity_wifi: "免费 WIFI", amenity_wifi_p: "高速互联网全覆盖。",
+                amenity_fridge: "冰箱", amenity_fridge_p: "配备水杯、咖啡杯和烧水壶。",
+                amenity_coffee: "咖啡", amenity_coffee_p: "提供速溶咖啡和电壶。",
+                amenity_bath: "热水器", amenity_bath_p: "热水淋浴并提供毛巾。",
+                gallery_subtitle: "相册廊", gallery_h2: "在 ดิ ออร่า 的休闲时光",
+                loc_subtitle: "地理位置", loc_h2: "周边景点",
+                attr_reser_time: "3分钟", attr_reser_h4: "赛车游艇码头", attr_reser_dist: "1.5公里",
+                attr_shrine_time: "3分钟", attr_shrine_h4: "查孟仙后庙", attr_shrine_dist: "1公里",
+                attr_forest_time: "15分钟", attr_forest_h4: "攀武里森林公园", attr_forest_dist: "11公里",
+                attr_learning_time: "14分钟", attr_learning_h4: "生态学习中心", attr_learning_dist: "9.2公里",
+                attr_skull_time: "13分钟", attr_skull_h4: "考卡洛克海滩", attr_skull_dist: "11公里",
+                attr_street_time: "9分钟", attr_street_h4: "街头小吃", attr_street_dist: "5.6公里",
+                attr_wat_time: "35分钟", attr_wat_h4: "惠蒙空寺", attr_wat_dist: "35.3公里",
+                attr_huahin_time: "23分钟", attr_huahin_h4: "华欣海滩", attr_huahin_dist: "21.2公里",
+                attr_turtle_time: "14分钟", attr_turtle_h4: "龟山海滩", attr_turtle_dist: "9.2公里",
+                attr_teacher_time: "10分钟", attr_teacher_h4: "Baan Kru Suan", attr_teacher_dist: "7.2公里",
+                attr_memory_time: "11分钟", attr_memory_h4: "记忆屋咖啡馆", attr_memory_dist: "8公里",
+                attr_bamp_time: "14分钟", attr_bamp_h4: "Bamp : beach & cafe", attr_bamp_dist: "9.7公里",
+                contact_subtitle: "联系我们", contact_h2: "咨询与预订", contact_p: "欢迎各位咨询和预订。"
+            },
+            ru: {
+                nav_about: "О нас", nav_houses: "Дома", nav_amenities: "Удобства", nav_gallery: "Галерея", nav_book: "Бронь",
+                hero_h1: "Природа — ваша <span>Аура</span>", hero_p: "The Aura Pranburi (Pet friendly)<br>Отдых на природе в частной атмосфере",
+                about_subtitle: "Добро пожаловать", about_h2: "Ваш уютный уголок",
+                about_p: "The Aura Pranburi — это частный дом. Мы ценим тишину, дружелюбие и рады гостям с животными.",
+                policy_title: "Правила", policy_in: "Заезд: 15:00", policy_out: "Выезд: 12:00",
+                policy_pet: "Можно с животными *", policy_no_smoke: "Не курить в доме", policy_note: "* Ущерб за питомцев оплачивается отдельно.",
+                stat_pet_h3: "Pet", stat_pet_p: "Friendly", stat_quiet_h3: "Quiet", stat_quiet_p: "Atmosphere",
+                house_subtitle: "Наше жилье", house_h2: "Выберите свой стиль отдыха",
+                price_small: "700 ฿ / ночь", price_big: "1,500 ฿ / ночь",
+                house_small_h3: "Малый дом", house_small_p: "Идеально для 2 гостей, уютная атмосфера в стиле минимализма.",
+                house_big_h3: "Большой дом", house_big_p: "Идеально для 3-5 гостей, просторная зона со всеми удобствами.",
+                small_feat_persons: "2 чел.", small_feat_bed: "1 Кровать Queen", small_feat_tv: "32\" ТВ",
+                big_feat_persons: "3-5 чел. (+150 за чел.)", big_feat_bed: "2 Queen + 1 Односпальная", big_feat_tv: "40\" ТВ",
+                btn_trip: "Бронь на Trip.com", btn_booking: "Бронь на Booking.com", btn_line_inquiry: "Запрос в LINE",
+                amenities_subtitle: "Удобства", amenities_h2: "Комфортно как дома",
+                amenity_wifi: "Бесплатный WIFI", amenity_wifi_p: "Интернет на всей территории.",
+                amenity_fridge: "Холодильник", amenity_fridge_p: "Стаканы, кружки и чайник.",
+                amenity_coffee: "Кофе", amenity_coffee_p: "Растворимый кофе и чайник.",
+                amenity_bath: "Горячая вода", amenity_bath_p: "Душ и чистые полотенца.",
+                gallery_subtitle: "Галерея", gallery_h2: "Минуты отдыха в The Aura",
+                loc_subtitle: "Расположение", loc_h2: "Достопримечательности",
+                attr_reser_time: "3 мин", attr_reser_h4: "Марина Рейсер", attr_reser_dist: "1.5 км",
+                attr_shrine_time: "3 мин", attr_shrine_h4: "Храм Tubtim Thong", attr_shrine_dist: "1 км",
+                attr_forest_time: "15 мин", attr_forest_h4: "Лесной парк", attr_forest_dist: "11 км",
+                attr_learning_time: "14 мин", attr_learning_h4: "Центр обучения", attr_learning_dist: "9.2 км",
+                attr_skull_time: "13 мин", attr_skull_h4: "Пляж Као Калок", attr_skull_dist: "11 км",
+                attr_street_time: "9 мин", attr_street_h4: "Уличная еда", attr_street_dist: "5.6 км",
+                attr_wat_time: "35 min", attr_wat_h4: "Ват Хуай Монгкол", attr_wat_dist: "35.3 กม.",
+                attr_huahin_time: "23 min", attr_huahin_h4: "Пляж Хуахин", attr_huahin_dist: "21.2 км",
+                attr_turtle_time: "14 мин", attr_turtle_h4: "Пляж Као Тао", attr_turtle_dist: "9.2 км",
+                attr_teacher_time: "10 мин", attr_teacher_h4: "Baan Kru Suan", attr_teacher_dist: "7.2 км",
+                attr_memory_time: "11 min", attr_memory_h4: "Memory House Cafe", attr_memory_dist: "8 км",
+                attr_bamp_time: "14 мин", attr_bamp_h4: "Bamp : beach & cafe", attr_bamp_dist: "9.7 км",
+                contact_subtitle: "Контакты", contact_h2: "Запросы и бронирование", contact_p: "Мы рады всем гостям."
+            }
+        };
+
+        const flags = { th: "🇹🇭", en: "🇺🇸", jp: "🇯🇵", kr: "🇰🇷", zh: "🇨🇳", ru: "🇷🇺" };
+
+        /**
+         * The Aura Pranburi - Main Interactive Logic
+         */
+        document.addEventListener('DOMContentLoaded', () => {
+            // Initialize Lucide Icons
+            if (typeof lucide !== 'undefined') {
+                lucide.createIcons();
+            }
+
+            // Scroll Reveal Logic
+            function reveal() {
+                const reveals = document.querySelectorAll(".reveal");
+                for (let i = 0; i < reveals.length; i++) {
+                    const windowHeight = window.innerHeight;
+                    const elementTop = reveals[i].getBoundingClientRect().top;
+                    const elementVisible = 150;
+                    if (elementTop < windowHeight - elementVisible) {
+                        reveals[i].classList.add("active");
+                    }
+                }
+            }
+
+            // Navbar Scroll effect
+            function handleNavbar() {
+                const nav = document.getElementById('main-nav');
+                if (nav) {
+                    if (window.scrollY > 50) {
+                        nav.classList.add('scrolled');
+                    } else {
+                        nav.classList.remove('scrolled');
+                    }
+                }
+            }
+
+            window.addEventListener("scroll", reveal);
+            window.addEventListener("scroll", handleNavbar);
+            
+            // Language persistence
+            const savedLang = localStorage.getItem('aura_lang') || 'th';
+            switchLanguage(savedLang, false);
+
+            // Initial checks
+            reveal();
+            handleNavbar();
+
+            // Mobile menu toggle
+            const toggle = document.getElementById('mobile-toggle');
+            const navLinks = document.querySelector('.nav-links');
+            if (toggle && navLinks) {
+                toggle.addEventListener('click', () => {
+                    navLinks.classList.toggle('active');
+                });
+            }
+        });
+
+        function switchLanguage(lang, store = true) {
+            if (!translations[lang]) return;
+
+            const elements = document.querySelectorAll('[data-i18n]');
+            elements.forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (translations[lang][key]) {
+                    el.innerHTML = translations[lang][key];
+                }
+            });
+
+            // Update Current Flag/Lang Display
+            const btn = document.getElementById('current-lang');
+            if (btn) {
+                btn.innerHTML = `<span>${flags[lang]}</span> ${lang.toUpperCase()}`;
+            }
+
+            // Update Active State
+            document.querySelectorAll('.lang-option').forEach(opt => {
+                opt.classList.remove('active');
+                if (opt.getAttribute('onclick').includes(`'${lang}'`)) {
+                    opt.classList.add('active');
+                }
+            });
+
+            if (store) {
+                localStorage.setItem('aura_lang', lang);
+                // Close dropdown if mobile
+                const navLinks = document.querySelector('.nav-links');
+                if (navLinks && window.innerWidth <= 991) {
+                    navLinks.classList.remove('active');
+                }
+            }
+        }
+
+        /**
+         * Update the main room image when a thumbnail is clicked
+         */
+        function updateHouseImage(id, src, thumb) {
+            const mainImg = document.getElementById(id);
+            if (mainImg) {
+                mainImg.src = src;
+                
+                // Update active state in thumbnail row
+                const container = thumb.parentElement;
+                container.querySelectorAll('.room-thumb').forEach(t => t.classList.remove('active'));
+                thumb.classList.add('active');
+            }
+        }
+    </script>
+</body>
+</html>
